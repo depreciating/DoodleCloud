@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+config.env
+thread_cache.json
+upload/*
+download/*
+!upload/.gitkeep
+!download/.gitkeep

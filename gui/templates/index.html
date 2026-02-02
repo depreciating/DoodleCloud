@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>InstaCloud - Infinite Storage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="header">
+        <div id="branding">
+            <h1 id="title">InstaCloud</h1>
+            <p id="subtitle">Instagram as infinite cloud storage.</p>
+        </div>
+    </div>
+
+    <main>
+        <div class="toolbar">
+            <div id="selectionCount" style="color: #aaa; font-size: 0.9rem;">0 selected</div>
+
+            <div class="toolbar-actions">
+                <input type="file" id="fileInput" style="display:none" multiple>
+                
+                <button class="btn btn-primary" onclick="document.getElementById('fileInput').click()">
+                    <i class="fas fa-cloud-upload-alt"></i> Upload
+                </button>
+                
+                <button class="btn btn-secondary" onclick="loadFiles()">
+                    <i class="fas fa-sync-alt"></i> Refresh
+                </button>
+                
+                <button class="btn btn-danger" id="btnDelete" onclick="deleteSelected()" style="display: none;">
+                    <i class="fas fa-trash"></i> Delete
+                </button>
+                 
+                <button class="btn btn-secondary" id="btnDownload" onclick="downloadSelected()" style="display: none;">
+                    <i class="fas fa-download"></i> Download
+                </button>
+            </div>
+
+            <div class="toolbar-right">
+                <span id="statusIndicator" class="badge badge-offline">Connecting...</span>
+                <button class="btn btn-secondary" onclick="openThreadDialog()" title="Select Chat Thread" style="padding: 6px 10px;">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="progressArea"></div>
+
+        <div class="file-grid" id="fileGrid">
+            <div style="grid-column: 1/-1; text-align: center; color: #555; padding: 2rem;">
+                <i class="fas fa-circle-notch fa-spin"></i> Loading...
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Made with <i class="fas fa-heart" style="color: var(--danger);"></i> by <span style="color: var(--primary);">Depreciating</span></p>
+        <div class="social-links">
+            <a href="https://t.me/depreciatin" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://discordapp.com/users/depreciating" target="_blank"><i class="fab fa-discord"></i></a>
+            <a href="https://github.com/depreciating" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://discord.gg/YNHkj9kVFt" target="_blank" style="color: #5865F2;"><i class="fas fa-server"></i> Server</a>
+        </div>
+    </footer>
+
+    <dialog id="uploadDialog" class="modal">
+        <h3><i class="fas fa-spinner fa-spin"></i> Processing...</h3>
+        <p id="uploadText" style="margin-top: 10px;">Encrypting & Uploading...</p>
+    </dialog>
+
+    <dialog id="threadDialog" class="modal" style="width: 350px; text-align: left;">
+        <h3 style="margin-top:0; border-bottom:1px solid #444; padding-bottom:10px;">Select Storage Chat</h3>
+        <div id="threadList" style="max-height: 300px; overflow-y: auto; margin: 15px 0;">
+            <div style="text-align:center; color:#aaa;"><i class="fas fa-circle-notch fa-spin"></i> Loading chats...</div>
+        </div>
+        <div style="text-align: right;">
+            <button class="btn btn-secondary" onclick="document.getElementById('threadDialog').close()">Cancel</button>
+        </div>
+    </dialog>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

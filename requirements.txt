@@ -1,0 +1,6 @@
+flask
+instagrapi
+numpy
+pillow
+psycopg2-binary
+requests
