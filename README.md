@@ -28,7 +28,7 @@ InstaCloud is a Proof-of-Concept (PoC) tool that uses Instagram's internal API t
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/depreciating/InstaCloud.git](https://github.com/depreciating/InstaCloud.git)
+    git clone https://github.com/depreciating/InstaCloud.git
     cd InstaCloud
     ```
 
