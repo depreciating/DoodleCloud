@@ -4,7 +4,7 @@
 
 DoodleCloud is a Proof-of-Concept (PoC) tool that uses Instagram's internal API to store unlimited files for free. By converting files into "Visual Noise" images and uploading them as DM doodles, we can bypass file type restrictions and use Instagram's servers as a permanent backend.
 
-![DoodleCloud GUI](https://i.ibb.co/60BYSkZD/Screenshot-20260202-153217.jpg)
+![DoodleCloud GUI](https://iili.io/fbvVGPS.jpg)
 
 ## 🚀 How It Works
 
